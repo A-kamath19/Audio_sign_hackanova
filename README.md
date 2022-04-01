@@ -1,6 +1,7 @@
-# Audio_sign_hackanova
+# Audio- Sign Language Translator
 
-An application which takes in live speech or audio recording as input in any indian language, translates
+
+An application which takes in live speech or text as input in any indian language, translates
 into English language in text format and displays the relevant Indian Sign Language images or GIFs.
 
 # Tools for Implementation:
