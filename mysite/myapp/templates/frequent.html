@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+      {% load static %}
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+      <title>Frequently used terms</title>
+  </head>
+  <section class="full">
+	<style>
+body {
+  background-image: url('https://images.pexels.com/photos/326240/pexels-photo-326240.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+</style>
+   <header>
+    <div class="p-1" id="topHeader">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-right">
+            <a style="color: black ;font-size: 18" class="p-1" href="tel:+919090909090"> <i class="fas fa-phone"></i> +(91) 9090909090 </a>
+            <a style="color: black;font-size: 18" class="p-1" href="mailto:abc@gmail.com"> <i class="fas fa-envelope"></i> inquiry@signconverter.com </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+ <div id="bottomHeader">
+      <div class="container-fluid">
+        <nav class="navbar navbar-dark navbar-expand-md" style="background-color:#2C3E50">
+	<img class="logo" src="https://cdn.pixabay.com/photo/2016/10/29/20/24/love-1781441__340.png">
+	<style>
+	.logo{
+		height:10%;
+		width:10%;
+		}
+	</style>
+            <ul class="navbar-nav">
+		<style>
+	.navbar-nav{
+		margin-left:50;
+		}
+	</style>
+              <li class="nav-item">
+                <a style="font-size: 20px" class="nav-link" href="{% url 'home' %}">Home</a>
+              </li>
+              <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size: 20px">
+          Convert
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="{% url 'text_to_speech' %}">Text to audio</a>
+          <a class="dropdown-item" href="{% url 'speech_to_sign' %}">Audio to sign language</a>
+          <a class="dropdown-item" href="{% url 'speech_to_letter' %}">Audio to ISL letters</a>
+          <a class="dropdown-item" href="{% url 'text_to_sign' %}">Text to sign language</a>
+        </div>
+      </li>
+              <li class="nav-item">
+                <a style="font-size: 20px" class="nav-link" href="{% url 'frequent' %}">FAT</a>
+              </li>
+              <li class="nav-item">
+                <a style="font-size: 20px" class="nav-link" href="{% url 'contactUs' %}">Contact Us</a>
+              </li>
+            </ul>
+        </nav>
+      </div>
+  </head>
+  <style type="text/css">
+</style>
+<body>
+	<center><h2 style="margin-top:10px;text-shadow: 1px 1px gray;">FREQUENTLY ASKED TERMS</h2></center>
+	<div class="box-1" >
+		<iframe  name="list" src="{% url 'list' %}" style="height: 700px; width: 499px; margin-left: 3.5rem; margin-top: 2%;" align="left"></iframe>
+	</div>
+	<div class="box-2" >
+		<iframe name="output" src="{% url 'output' %}" style="height: 340px; width:615px; margin-top: 5%;margin-right: 4rem;" align="right"></iframe>
+	</div>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+{% load static %}
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link href="{% static 'main/css/style1.css' %}" rel="stylesheet">
+
+
+    <title>Text to speech</title>
+    <header>
+    <div class="p-1" id="topHeader">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-right">
+            <a style="color: black ;font-size: 18" class="p-1" href="tel:+919090909090"> <i class="fas fa-phone"></i> +(91) 9090909090 </a>
+            <a style="color: black;font-size: 18" class="p-1" href="mailto:abc@gmail.com"> <i class="fas fa-envelope"></i> inquiry@signconverter.com </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+ <div id="bottomHeader">
+      <div class="container-fluid">
+        <nav class="navbar navbar-dark navbar-expand-md" style="background-color:#34495E">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a style="font-size: 18" class="nav-link" href="{% url 'home' %}">Home</a>
+              </li>
+              <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Convert
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="{% url 'text_to_speech' %}">Text to audio</a>
+          <a class="dropdown-item" href="{% url 'speech_to_sign' %}">Audio to sign language</a>
+          <a class="dropdown-item" href="{% url 'speech_to_letter' %}">Audio to ISL letters</a>
+          <a class="dropdown-item" href="{% url 'text_to_sign' %}">Text to sign language</a>
+        </div>
+      </li>
+              <li class="nav-item">
+                <a style="font-size: 20px" class="nav-link" href="{% url 'frequent' %}">FAT</a>
+              </li>
+              <li class="nav-item">
+                <a style="font-size: 18" class="nav-link" href="{% url 'contactUs' %}">Contact Us</a>
+              </li>
+            </ul>
+        </nav>
+      </div>
+     {% load static%}
+    </div>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+     <script src="{% static 'main/js/choices.js' %}"></script>
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+    <!-- Option 2: jQuery, Popper.js, and Bootstrap JS
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+    -->
+      </head>
+      <body>
+      <div class="header">
+          <form method="post">
+            {% csrf_token %}
+               <h1>Text to speech converter</h1>
+               <div class="form-box">
+                  <input id="search" type="text" name="search" placeholder="Enter text" />
+                  <button class="btn btn-info pull-right" type="button" onclick="{% url 'text_to_speech' %}">PRESS ENTER</button>
+               </div>
+            </div>
+          </form>
+          {{data}}
+        </div>
+        <script src="{% static 'main/js/choices.js' %}"></script>
+      </body>
+</html>
